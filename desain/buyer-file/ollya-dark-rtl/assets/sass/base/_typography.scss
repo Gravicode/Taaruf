@@ -1,0 +1,87 @@
+/**
+ * Basic typography style for copy text
+ */
+body {
+  @include font-size($fs-base);
+  color: $white-color;
+  font: normal 125% 1.4;
+  @extend %text-medium;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @extend %text-bold;
+    color: $white-color;
+    @extend %font;
+    @extend %text-capitalize;
+    @include add-prefix(transition, (all .3s ease));
+  }
+
+  h1{
+    @include font-size($fs-h1);
+  }
+  h2{
+    @include font-size($fs-h2);
+  }
+  h3{
+    @include font-size($fs-h3);
+  }
+  h4{
+    @include font-size($fs-h4);
+  }
+  h5{
+    @include font-size($fs-h5);
+  }
+  h6{
+    @include font-size($fs-h6);
+  }
+
+  a>h1,
+  a>h2,
+  a>h3,
+  a>h4,
+  a>h5,
+  a>h6 {
+    @include transition($transition);
+  }
+
+  a {
+    @include transition($transition);
+    display: inline-block;
+    text-decoration: none;
+    color: $white-color;
+    &:hover {
+      color: $theme-color;
+    }
+
+  }
+  p {
+    line-height: 1.5;
+    font-size: 1rem;
+  }
+
+  ul {
+    @extend %mp-0;
+  }
+  img {
+    @include transition($transition);
+  }
+}
+.breadcrumb-item+.breadcrumb-item::before {
+  color: $white-color;
+}
+.border-top {
+  border-top: 1px solid #ffffff26 !important;
+}
+.bg-white {
+  background-color: #213366!important;
+}
+.modal-content {
+  background-color: $title-color;
+}
+.modal-header {
+  border-color: rgba($white-color, $alpha: .1) !important;
+}
